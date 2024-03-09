@@ -2,32 +2,36 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
+@layer base {
+    h1 {
+        @apply scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl
+    }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
+    h2 {
+        @apply scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight first:mt-0
+    }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-}
+    h3 {
+        @apply scroll-m-20 text-2xl font-semibold tracking-tight
+    }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+    h4 {
+        @apply scroll-m-20 text-xl font-semibold tracking-tight
+    }
+
+    p {
+        @apply leading-7 [&:not(:first-child)]:mt-6
+    }
+
+    backquote {
+        @apply mt-6 border-l-2 pl-6 italic
+    }
+
+    ul {
+        @apply my-6 ml-6 list-disc [&>li]:mt-2
+    }
+
+    code {
+        @apply relative rounded bg-muted px-[0.3rem] py-[0.2rem] font-mono text-sm font-semibold
+    }
 }
